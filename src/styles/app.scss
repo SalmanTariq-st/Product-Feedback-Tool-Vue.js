@@ -1,0 +1,151 @@
+@import "./vuetify_overrides.scss";
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600&display=swap");
+@import "./mixins.scss";
+@import "./colors.scss";
+@import "./import.scss";
+
+html,
+body {
+  font-family: "Jost", sans-serif;
+}
+
+a {
+  color: white !important;
+  text-decoration: none;
+}
+
+.modal-open {
+  overflow-y: hidden;
+  overflow-x: hidden;
+  max-height: 100vh;
+
+  @include media(">md") {
+    padding-right: 8px;
+    background-color: $light-bg;
+  }
+}
+
+.v-application {
+  font-family: "Jost", sans-serif !important;
+  background: $light-bg !important;
+  transition: all 0.2s ease !important;
+}
+
+.card {
+  min-height: 178px;
+  width: 223px;
+  background-color: white;
+  border-radius: 10px;
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+}
+
+.fb__card,
+.roadmap__card {
+  min-height: 178px;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.15s ease-in-out;
+
+  @include media(">=md") {
+    &:hover {
+      transform: scale(1.02);
+    }
+    min-height: 151px !important;
+  }
+
+  @include media(">=lg") {
+    width: 100%;
+  }
+
+  .tab_color,
+  .roadmap__status__indicator {
+    height: 6px;
+
+    &.planned {
+      background-color: $planned;
+    }
+
+    &.in-progress {
+      background-color: $in-progress;
+    }
+
+    &.live {
+      background-color: $live;
+    }
+
+    .status_elipse {
+      font-size: 13px;
+      color: $text_primary;
+      padding-left: 1.5rem;
+    }
+  }
+
+  .roadmap__status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 1rem;
+
+    &__indicator {
+      height: 8px;
+      width: 8px;
+      border-radius: 3rem;
+    }
+
+    &__text {
+      font-size: 13px;
+      color: $text_primary;
+      text-transform: capitalize;
+    }
+  }
+}
+
+.container {
+  padding: 32px 24px;
+  transition: all 0.2s ease;
+
+  @include media(">=md") {
+    width: 768px;
+    margin: 0 auto;
+    padding: 24px;
+  }
+
+  @include media(">=lg") {
+    width: 872px;
+  }
+}
+
+h1,
+h2,
+h3 {
+  color: $dark_blue;
+}
+
+.trash__delete {
+  display: flex;
+  width: 100%;
+
+  .ui-button {
+    margin-right: 0;
+    margin-left: auto;
+    padding: 0 !important;
+
+    .v-btn__content {
+      margin-left: 2rem !important;
+    }
+
+    .mdi-delete {
+      font-size: 20px;
+      color: $text-primary !important;
+      opacity: 0.5;
+      transition: all 0.3s ease;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}

@@ -1,0 +1,123 @@
+@import "@/styles/import.scss";
+
+.ui-button {
+  transition: all ease 0.2s !important;
+  @include colorStates;
+  min-width: 48px !important;
+  height: 30px !important;
+  margin: 0.3rem;
+  text-transform: capitalize !important;
+  border-radius: 10px !important;
+  padding: 0 10px !important;
+  font-weight: 500 !important;
+  letter-spacing: normal !important;
+
+  &:not(.v-btn--icon) {
+    border-radius: 0.625rem;
+  }
+  &:active {
+    transform: scale(0.9);
+  }
+  &[disabled] {
+    box-shadow: unset;
+  }
+  &:hover::before {
+    opacity: 0 !important;
+  }
+
+  &__chip {
+    @include buttonStyle(null, null, 13px, bold, null);
+    cursor: auto !important;
+    width: fit-content !important;
+  }
+
+  &__upvote {
+    @include buttonStyle(
+      $light-bg !important,
+      $dark_blue !important,
+      null,
+      bold !important,
+      $light-blue
+    );
+  }
+
+  &__upvoted {
+    @include buttonStyle(
+      $blue !important,
+      white!important,
+      null,
+      bold !important,
+      null
+    );
+
+    svg {
+      path {
+        stroke: white !important;
+      }
+    }
+  }
+
+  &__comments {
+    @include buttonStyle(null, $dark_blue, null, bold, null);
+    cursor: unset !important;
+  }
+
+  &__comments_empty {
+    @include buttonStyle(null, #949cc4 !important, null, bold !important, null);
+    cursor: unset !important;
+  }
+
+  &__feedback {
+    @include buttonStyle(
+      $purple !important,
+      white !important,
+      null,
+      null,
+      #c75af6
+    );
+    padding: 1.3rem 1rem !important;
+
+    @include media(">md") {
+      width: 158px;
+      height: 44px !important;
+    }
+  }
+
+  &__post__comment {
+    @include buttonStyle(
+      $purple !important,
+      white !important,
+      null,
+      null,
+      #c75af6
+    );
+    padding: 1.3rem 1rem !important;
+
+    @include media(">md") {
+      width: 142px;
+      height: 44px !important;
+    }
+  }
+
+  &__cancel {
+    @include buttonStyle(
+      $dark_blue !important,
+      white !important,
+      null,
+      null,
+      #656ea3
+    );
+    padding: 1.3rem 1rem !important;
+  }
+
+  &__delete {
+    @include buttonStyle(
+      $red !important,
+      white !important,
+      null,
+      null,
+      #e98888
+    );
+    padding: 1.3rem 1rem !important;
+  }
+}

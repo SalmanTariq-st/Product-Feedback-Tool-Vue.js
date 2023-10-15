@@ -1,0 +1,50 @@
+@import "@/styles/colors.scss";
+@import "@/styles/import.scss";
+.feedback {
+  width: 100%;
+  &_wrapper {
+    width: 100%;
+    position: relative;
+    min-height: 708px;
+    margin-top: 2.625rem;
+
+    &.card {
+      margin-bottom: 0;
+    }
+
+    svg {
+      position: absolute;
+      top: -1.5rem;
+      height: 40px;
+    }
+
+    &__header {
+      margin-top: 1.1rem;
+      width: 100%;
+      word-break: break-word;
+      h4 {
+        color: $dark_blue;
+        letter-spacing: -0.25px;
+        font-size: 18px;
+      }
+    }
+  }
+
+  @include media(">=md") {
+    &_wrapper {
+      width: 540px;
+
+      svg {
+        height: 56px;
+        top: -2rem;
+        left: 2.5rem;
+      }
+
+      &__header {
+        h4 {
+          font-size: 24px !important;
+        }
+      }
+    }
+  }
+}

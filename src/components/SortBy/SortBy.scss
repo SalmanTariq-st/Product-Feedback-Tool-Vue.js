@@ -1,0 +1,64 @@
+@import "@/styles/import.scss";
+.sort_by {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+
+  .v-menu__content {
+    max-width: 255px !important;
+  }
+
+  &__transparent {
+    color: white !important;
+    padding: 0 !important;
+  }
+
+  .v-input {
+    &--is-focused {
+      border: 1px solid transparent !important;
+    }
+  }
+
+  &__select {
+    max-width: 115px;
+    padding-left: 5px !important;
+
+    &.v-select {
+      &.v-input--dense {
+        .v-select__selection--comma {
+          color: #f2f4fe !important;
+          font-weight: bold;
+
+          @include media(">=md") {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+
+    .v-select {
+      &__selections {
+        min-width: unset !important;
+      }
+    }
+
+    .v-input__control {
+      max-width: 115px !important;
+    }
+
+    .v-input__slot {
+      &.transparent {
+        padding: 0 !important;
+      }
+    }
+
+    .mdi-chevron-down {
+      &::before {
+        color: white;
+        font-size: 16px;
+        margin-top: 0.1rem;
+        -webkit-text-stroke-width: 0.5px;
+      }
+    }
+  }
+}
